@@ -1,0 +1,36 @@
+<!-- Construct Elements From Data.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Elements from data(array,variables)</title>
+</head>
+
+<body>
+    <!-- Target container -->
+    <div id="react-container"></div>
+    <!-- React Library -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <!-- ReactDom -->
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script>
+    var items = ["1 lb Salmon",
+        "1 cup Pine Nuts",
+        "2 cups Butter Lettuce",
+        "1 Yellow Squash",
+        "1/2 cup Olive Oil",
+        "3 cloves of Garlic"
+    ];
+
+    //use array.map function to map each array element to li tags
+    var ul = React.createElement("ul", { className: "ingredients" },
+        items.map((ingredient, i) => React.createElement("li", { key: i }, ingredient)));
+    console.log(ul);
+
+    //key property is added to remove the warning. The key property is used by React to help it update the DOM efficiently.
+
+    ReactDOM.render(ul, document.getElementById('react-container'));
+    </script>
+</body>
+
+</html>

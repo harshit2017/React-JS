@@ -1,0 +1,50 @@
+<!-- Nested Children.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Children Elements</title>
+</head>
+
+<body>
+    <!-- Target container -->
+    <div id="react-container"></div>
+    <!-- React Library -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <!-- ReactDom -->
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- Pure React Code -->
+    <script>
+    // var ul = React.createElement("ul", null, React.createElement("li", null, "1 lb Salmon"),
+    //     React.createElement("li", null, "1 cup Pine Nuts"),
+    //     React.createElement("li", null, "2 cups Butter Lettuce<"),
+    //     React.createElement("li", null, "1 Yellow Squash"),
+    //     React.createElement("li", null, "1/2 cup Olive Oil"),
+    //     React.createElement("li", null, "3 cloves of Garlic"));
+    // after the 2nd argument all the arguments are treated as children
+    // React creates an array of children and sets props.children = to the array
+    // console.log(ul);
+
+    var section = React.createElement("section", { id: "baked-salmon" }, React.createElement("h1", null, "Baked Salmon"), React.createElement("ul", { className: "ingredients" }, React.createElement("li", null, "1 lb Salmon"),
+            React.createElement("li", null, "1 cup Pine Nuts"),
+            React.createElement("li", null, "2 cups Butter Lettuce"),
+            React.createElement("li", null, "1 Yellow Squash"),
+            React.createElement("li", null, "1/2 cup Olive Oil"),
+            React.createElement("li", null, "3 cloves of Garlic")),
+        React.createElement("section", { "className": "instructions" },
+            React.createElement("h2", null, "Cooking Instructions"),
+            React.createElement("p", null, "Preheat the oven to 350 degrees."),
+            React.createElement("p", null, "Spread the olive oil around a glass baking dish."),
+            React.createElement("p", null, "Add the salmon, garlic, and pine..."),
+            React.createElement("p", null, "Bake for 15 minutes."),
+            React.createElement("p", null, "Add the yellow squash and put..."),
+            React.createElement("p", null, "Remove from oven and let cool for 15 ...."))
+    );
+
+    // ReactDOM.render(ul, document.getElementById('react-container'));
+    ReactDOM.render(section, document.getElementById('react-container'));
+    console.log(section);
+    </script>
+</body>
+
+</html>
